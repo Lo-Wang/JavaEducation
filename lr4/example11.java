@@ -12,5 +12,5 @@ public class example11 {
         }
         System.out.println("3");
         }
-       
+       // ошибок нет
 }

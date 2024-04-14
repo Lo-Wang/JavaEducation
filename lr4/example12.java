@@ -3,7 +3,7 @@ package lr4;
 public class example12 {
         public static void m(String str, double chislo) {
             if (str == null) {
-                throw new IllegalArgumentException("Строка" + " введена неверно");
+                throw new IllegalArgumentException("Строка" + " введена неверно"); // форматирование строк
             }
             if (chislo > 0.001) {
                 throw new IllegalArgumentException("Неверное число");

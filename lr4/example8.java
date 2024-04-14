@@ -12,7 +12,7 @@ public class example8 {
 
     public static void main(String[] args) {
         try {
-            m();
+            m(); // Ловим исключение и продолжаем работу программы
         } catch (Exception e) {
             System.out.println("Exception caught: " + e);
         }
