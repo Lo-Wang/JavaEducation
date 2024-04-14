@@ -7,7 +7,7 @@ public class example7 {
             throw new NullPointerException("ошибка");
         } catch (NullPointerException e) {
             System.out.println("1");
-        } catch (ArithmeticException e) {
+        } catch (Exception e) {
             System.out.println("2");
         }
         System.out.println("3");
