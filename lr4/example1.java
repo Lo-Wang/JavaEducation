@@ -7,12 +7,10 @@ public class example1 {
             throw new RuntimeException("Непроверяемая ошибка");
         } catch (RuntimeException e) {
             System.out.println("1 " + e);
-            return; // Добавлен оператор return для завершения программы после обработки исключения
+        } finally {
+            System.out.println("3");
         }
-        // Этот код не будет достигнут, поэтому его можно удалить
-        // System.out.println("2");
     }
-    
 }
 
 
