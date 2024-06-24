@@ -1,26 +1,51 @@
-import java.util.Scanner;
+package timus
 
-public class Power {
+import java.util.*;
+
+public class 1110 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a1 = scanner.nextInt();
-        int b2 = scanner.nextInt();
-        int c3 = scanner.nextInt();
-        String output = "";
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
+        int Y = scanner.nextInt();
         
-        for (int x = 0; x <= b2; x++) {
-            if (Math.pow(x, a1) % b2 == c3) {
-                output += x + " ";
+        List<Integer> results = new ArrayList<>();
+        
+        for (int X = 0; X < M; X++) {
+            if (modularExponentiation(X, N, M) == Y) {
+                results.add(X);
             }
         }
-        if (output != ""){
-            output.trim();
-            System.out.println(output);
+        
+        if (results.isEmpty()) {
+            System.out.println("-1");
+        } else {
+            for (int i = 0; i < results.size(); i++) {
+                if (i > 0) {
+                    System.out.print(" ");
+                }
+                System.out.print(results.get(i));
+            }
+            System.out.println();
         }
-        else{
-            System.out.println(-1);
+    }
+    
+    private static int modularExponentiation(int X, int N, int M) {
+        if (N == 0) {
+            return 1 % M;
         }
         
-        scanner.close();
+        long result = 1;
+        long base = X % M;
+        
+        while (N > 0) {
+            if (N % 2 == 1) {
+                result = (result * base) % M;
+            }
+            base = (base * base) % M;
+            N /= 2;
+        }
+        
+        return (int) result;
     }
 }
